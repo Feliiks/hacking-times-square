@@ -8,7 +8,7 @@ const Index = () => {
 
   useEffect(() => {
     let timer = setTimeout(() => {
-      preloaderRef.current.style.visibility = 'hidden'
+      preloaderRef.current.style.display = 'none'
     }, 4000)
 
     return () => {
