@@ -1,3 +1,5 @@
+@import '../panel';
+
 .home {
   height: 100vh;
 
@@ -9,6 +11,22 @@
 
   background: #000;
   overflow: hidden;
+
+  .sound-btn {
+    position: absolute;
+    top: 25px; right: 25px;
+
+    z-index: 998;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid #85f76b;
+    color: #0bee13;
+  }
+
+  .second {
+    animation: 0.5s ease-in both running show;
+    opacity: 0;
+  }
 
   .bgVid {
     height: 100%;
@@ -30,5 +48,14 @@
 
   .playing {
     display: block;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
