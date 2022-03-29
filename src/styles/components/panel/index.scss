@@ -1,52 +1,201 @@
 .panel {
-  height: 500px;
+  height: 550px; width: 700px;
 
   position: absolute;
+  display: flex;
+  flex-direction: column;
 
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   border: 2px solid #0bee13;
   box-shadow: #0bee13 0px 5px 15px;
   color: #fff;
   font-weight: bold;
+  backdrop-filter: grayscale(5px);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+
+  @media screen and (max-width: 730px) {
+    width: 500px; height: 350px;
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 350px; height: 350px;
+  }
 
   .header {
-    height: 50px;
+    height: 10%; width: 100%;
 
     display: flex;
     align-items: center;
     padding-left: 20px;
     border-bottom: 2px solid #0bee13;
-    box-shadow: #0bee13 0px 5px 15px;
+    box-shadow: 0px 0px 30px -6px #00F20A;
+    position: relative;
+
+    span {
+      color: #00F20A;
+      text-shadow: 0px 0px 8px #00F20A;
+    }
   }
 
   .content {
-    width: 100%; height: 100%;
+    width: 100%; height: 75%;
 
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    margin-top: 20px;
+
+    .logo {
+      height: 75px;
+
+      @media screen and (max-width: 730px) {
+        height: 50px;
+      }
+    }
+
+    .danger {
+      height: 100px;
+
+      @media screen and (max-width: 730px) {
+        height: 75px;
+      }
+
+      @media screen and (max-width: 550px) {
+        height: 50px;
+      }
+    }
+
+    h1 {
+      font-weight: bolder;
+      font-size: 60px;
+      text-shadow: 0px 0px 8px #00F20A;
+      text-align: center;
+
+      @media screen and (max-width: 730px) {
+        font-size: 35px;
+      }
+
+      @media screen and (max-width: 550px) {
+        font-size: 25px;
+      }
+    }
+
+    h2 {
+      font-weight: bolder;
+      font-size: 30px;
+      text-shadow: 0px 0px 8px #00F20A;
+      text-align: center;
+      color: #00F20A;
+
+      @media screen and (max-width: 730px) {
+        font-size: 20px;
+      }
+    }
+
+    .text-content {
+      width: 75%; height: 150px;
+
+      overflow-y: scroll;
+      overflow-x: hidden;
+      scrollbar-color: green;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      p {
+        text-align: justify;
+        font-weight: normal;
+      }
+    }
+
+    button {
+      height: 30px;
+
+      padding: 0 16px;
+
+      border-radius: 20px;
+      background: transparent;
+      border: 1px solid #00F20A;
+      color: #00F20A;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .counter {
+      height: 100px;
+
+      @media screen and (max-width: 730px) {
+        height: 75px;
+      }
+
+      @media screen and (max-width: 730px) {
+        height: 75px;
+      }
+    }
+
+    .buttons {
+      width: 300px;
+
+      display: flex;
+      justify-content: space-around;
+
+      @media screen and (max-width: 730px) {
+        width: 200px;
+      }
+
+      button {
+        height: 30px;
+
+        padding: 0 12px;
+
+        border-radius: 20px;
+        background: transparent;
+        border: 1px solid #00F20A;
+        color: #00F20A;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
 
     .details {
-      height: 500px; width: 500px;
+      height: 450px; width: 500px;
 
       position: absolute;
       margin-top: 30px;
       visibility: hidden;
       opacity: 0;
+      display: flex;
+      flex-direction: column;
 
       border: 2px solid #0bee13;
       border-radius: 10px;
       box-shadow: #0bee13 0px 5px 15px;
       transition: all 0.5s ease-in-out;
       transform: scale(1.1, 1.1);
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+
+      @media screen and (max-width: 730px) {
+        height: 350px; width: 350px;
+      }
+
+      @media screen and (max-width: 550px) {
+        height: 350px; width: 350px;
+      }
+
+      button {
+        margin-top: 10px;
+      }
     }
 
     .hack {
-      height: 500px; width: 500px;
+      height: 450px; width: 500px;
 
       position: absolute;
       margin-top: 30px;
@@ -57,8 +206,20 @@
       border-radius: 10px;
       box-shadow: #0bee13 0px 5px 15px;
       transform: scale(1.1, 1.1);
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.8);
       transition: all 0.5s ease-in-out;
+
+      @media screen and (max-width: 730px) {
+        height: 350px; width: 350px;
+      }
+
+      @media screen and (max-width: 550px) {
+        height: 350px; width: 350px;
+      }
+
+      button {
+        margin-top: 10px;
+      }
     }
 
     .showed {
@@ -67,4 +228,9 @@
       transform: scale(1, 1);
     }
   }
+}
+
+.showed {
+  visibility: visible;
+  opacity: 1;
 }

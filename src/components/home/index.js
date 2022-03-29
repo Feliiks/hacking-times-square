@@ -14,6 +14,7 @@ const Index = () => {
   const secondVideoRef = useRef()
   const screenWidth = window.screen.width
   const [soundStatus, setSoundStatus] = useState(false)
+  const [panelStatus, setPanelStatus] = useState(false)
 
   useEffect(() => {
     if (soundStatus) {
@@ -48,10 +49,10 @@ const Index = () => {
       <video className='bgVid playing' ref={firstVideoRef} onEnded={() => playSecondVideo()}>
         <source src={screenWidth > 730 ? first_video : first_video_mobile} type='video/mp4' />
       </video>
-      <video className='bgVid second' ref={secondVideoRef} muted loop>
+      <video className='bgVid second' ref={secondVideoRef} muted loop onPlay={() => setPanelStatus(true)}>
         <source src={screenWidth > 730 ? second_video : second_video_mobile} type='video/mp4' />
       </video>
-      <Panel />
+      <Panel showed={panelStatus} />
     </div>
   );
 };
