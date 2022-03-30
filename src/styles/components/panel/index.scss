@@ -1,5 +1,5 @@
 .panel {
-  height: 550px; width: 700px;
+  height: 550px; width: 750px;
 
   position: absolute;
   display: flex;
@@ -7,11 +7,11 @@
 
   background: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
-  border: 2px solid #0bee13;
-  box-shadow: #0bee13 0px 5px 15px;
+  border: 2px solid #00F20A;
+  box-shadow: #00F20A 0px 5px 15px, #00F20A 0px 5px 15px inset;
   color: #fff;
   font-weight: bold;
-  backdrop-filter: grayscale(5px);
+  backdrop-filter: blur(5px);
   visibility: hidden;
   opacity: 0;
   transition: all 1s ease-in-out;
@@ -29,14 +29,30 @@
 
     display: flex;
     align-items: center;
-    padding-left: 20px;
-    border-bottom: 2px solid #0bee13;
-    box-shadow: 0px 0px 30px -6px #00F20A;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
     position: relative;
 
+    border-bottom: 2px solid #00F20A;
+    box-shadow: #00F20A 0px 5px 15px;
+    overflow: hidden;
+
     span {
-      color: #00F20A;
-      text-shadow: 0px 0px 8px #00F20A;
+      color: #dedede;
+    }
+
+    .little-buttons {
+      width: 65px;
+
+      display: flex;
+      justify-content: space-between;
+
+      .item {
+        height: 16px; width: 16px;
+
+        background: #dedede;
+        border-radius: 50%;
+      }
     }
   }
 
@@ -72,8 +88,7 @@
 
     h1 {
       font-weight: bolder;
-      font-size: 60px;
-      text-shadow: 0px 0px 8px #00F20A;
+      font-size: 50px;
       text-align: center;
 
       @media screen and (max-width: 730px) {
@@ -88,9 +103,8 @@
     h2 {
       font-weight: bolder;
       font-size: 30px;
-      text-shadow: 0px 0px 8px #00F20A;
       text-align: center;
-      color: #00F20A;
+      color: #fff;
 
       @media screen and (max-width: 730px) {
         font-size: 20px;
@@ -102,7 +116,6 @@
 
       overflow-y: scroll;
       overflow-x: hidden;
-      scrollbar-color: green;
 
       &::-webkit-scrollbar {
         display: none;
@@ -115,15 +128,13 @@
     }
 
     button {
-      height: 30px;
-
-      padding: 0 16px;
+      padding: 6px 16px;
 
       border-radius: 20px;
       background: transparent;
       border: 1px solid #00F20A;
       color: #00F20A;
-      font-weight: bold;
+      font-weight: bolder;
       font-size: 14px;
     }
 
@@ -148,34 +159,21 @@
       @media screen and (max-width: 730px) {
         width: 200px;
       }
-
-      button {
-        height: 30px;
-
-        padding: 0 12px;
-
-        border-radius: 20px;
-        background: transparent;
-        border: 1px solid #00F20A;
-        color: #00F20A;
-        font-weight: bold;
-        font-size: 14px;
-      }
     }
 
     .details {
-      height: 450px; width: 500px;
+      height: 500px; width: 500px;
 
       position: absolute;
-      margin-top: 30px;
+      margin-top: 100px;
       visibility: hidden;
       opacity: 0;
       display: flex;
       flex-direction: column;
 
-      border: 2px solid #0bee13;
+      border: 2px solid #00F20A;
       border-radius: 10px;
-      box-shadow: #0bee13 0px 5px 15px;
+      box-shadow: #00F20A 0px 5px 15px, #00F20A 0px 5px 15px inset;
       transition: all 0.5s ease-in-out;
       transform: scale(1.1, 1.1);
       background: rgba(0, 0, 0, 0.8);
@@ -195,19 +193,20 @@
     }
 
     .hack {
-      height: 450px; width: 500px;
+      height: 500px; width: 500px;
 
       position: absolute;
-      margin-top: 30px;
+      margin-top: 100px;
       visibility: hidden;
       opacity: 0;
 
-      border: 2px solid #0bee13;
+      border: 2px solid #00F20A;
       border-radius: 10px;
-      box-shadow: #0bee13 0px 5px 15px;
+      box-shadow: #00F20A 0px 5px 15px, #00F20A 0px 5px 15px inset;
       transform: scale(1.1, 1.1);
       background: rgba(0, 0, 0, 0.8);
       transition: all 0.5s ease-in-out;
+      backdrop-filter: blur(5px);
 
       @media screen and (max-width: 730px) {
         height: 350px; width: 350px;

@@ -12,18 +12,28 @@ const Index = ({ showed }) => {
     <div className={showed ? "panel col-xl-5 showed" : "panel col-5"}>
       <div className="header">
         <span> HACKING TIMES SQUARE </span>
+        <div className="little-buttons">
+          <div className="item" />
+          <div className="item" />
+          <div className="item" />
+        </div>
       </div>
       <div className="content">
         <img className="danger" src={Danger} alt="danger"/>
         <h1> WARNING! <br/> HACKING BEGINS IN </h1>
         <img className="counter" src={Counter} alt="counter"/>
         <div className="buttons">
-          <button onClick={() => setDetails(true)}> DETAILS</button>
-          <button onClick={() => setHack(true)}> HACK</button>
+          <button onClick={() => setDetails(true)}> DETAILS </button>
+          <button onClick={() => setHack(true)}> HACK </button>
         </div>
         <div className={details ? 'details showed' : 'details'}>
           <div className="header">
             <span> DETAILS </span>
+            <div className="little-buttons">
+              <div className="item" />
+              <div className="item" />
+              <div className="item" />
+            </div>
           </div>
           <div className="content">
             <img className="logo" src={Logo} alt="logo"/>
@@ -51,6 +61,11 @@ const Index = ({ showed }) => {
         <div className={hack ? 'hack showed' : 'hack'}>
           <div className="header">
             <span> HACK </span>
+            <div className="little-buttons">
+              <div className="item" />
+              <div className="item" />
+              <div className="item" />
+            </div>
           </div>
           <div className="content">
             <img className="logo" src={Logo} alt="logo"/>
@@ -72,7 +87,7 @@ const Index = ({ showed }) => {
                 Let’s start by Hacking Times Square.. Will you Join us?
               </p>
             </div>
-            <button onClick={() => setHack(false)}> BACK</button>
+            <button onClick={() => setHack(false)}> BACK </button>
           </div>
         </div>
       </div>
